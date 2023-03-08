@@ -1,0 +1,172 @@
+Java5   计算商场的折扣
+
+描述
+ 牛牛商场促销活动
+ 满100全额打折9折;
+ 满500全额打8折;
+ 满2000全额打7折;
+ 满5000全额打6折;
+且商场有抹零活动,不足一元的部分不需要付款 (类型强制转换)
+牛大姨算不清楚自己应该付多少钱,请你帮忙算一下
+
+输入描述:
+牛大姨账单钱数 (int类型)
+输出描述:
+参加活动后,牛大姨应付钱数(int类型)
+
+实例1
+输入: 654
+输出:523
+
+代码如下:
+
+import java.util.*;
+
+public  class  Main {
+ public static void main(String[] args) {
+  Scanner console = new Scanner(System.in);
+  int price = console.nextInt();
+   int cost = 0;
+  
+ if (price>=5000) cost = (int)(price*0.6);
+else if(price>=2000) cost = (int)(price*0.7);
+else if(price>=500) cost = (int)(price*0.8);
+else if(price>=100) cost = (int) (price*0.9);
+else cost = price;
+System.out.println(cost);
+  }
+}
+Java6 判断体重指数
+
+描述:
+体重指数 = 体重(kg)/(身高(m) * 身高(m)),小于18.5属于偏瘦,介于18.5和
+20.9之间(左闭右开) 属于苗条,介于20.9和24.9之间 (左闭右开) 属于
+适中,超过24.9属于偏胖,下面由你来编写一段逻辑,算出输入了身高和体重指数,
+并返回他们的身材状况.(体重指数请使用double类型)
+
+输入描述:
+用户的身高 (m) 和用户的体重 (kg)
+
+输出描述:
+体重指数代表的用户身材状况
+
+实例1:
+
+输入: 1.75 62.5
+输出: 苗条
+
+实例2:
+输入: 1.5 40
+输出: 偏廋
+
+实例3:
+输入: 1.85 80
+输出: 适中
+
+实例4:
+输入: 2 100
+输出: 偏胖
+
+代码如下:
+
+import java.util.Scanner;
+
+ public  class  Main {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+     double height = scanner.nextDouble();
+     double weight = scanner.nextDouble();
+  double ibm = weight/(height*height);
+   
+     string i = ibm<18.5?"偏瘦":ibm<20.9?"苗条":ibm<24.9?"适中":"偏胖";
+   System.out.println(i);
+  }
+}
+
+Java7 判断学生成绩等级
+
+描述:
+现有如下成绩等级A,B,C,D其中A代表优秀,B代表良好,C代表及格,D代表不及格
+.现在请你来为学生的成绩进行分级,如果用户输入错误则输出未知等级
+
+输入描述:
+成绩等级对应的中文表述
+
+输出描述:
+
+优秀,良好,及格,不及格,未知等级
+
+实例1:
+输入: A
+输出:优秀
+实例2:
+输入:B
+输出:良好
+实例3:
+输入:C
+输出:及格
+实例4:
+输入:D
+输出:不及格
+输入:E
+输出:未知等级
+
+代码如下:
+
+import java.util.Scanner;
+
+public class Main {
+ public static void main(String[] args) {
+  Scanner scanner = new Scanner(System.in);
+  String grade = scanner.next();
+
+ if(grade.equals("A")) 
+//这一题主要考察==和equals的区别,如果用==,这里会返回false
+//==比较的地址是否相等,或者基础类型是否相等;而grade是new出来的,装的是一个地址
+//用于指向new出来的对象,所以它属于引用类型
+//对于String类,equals被重写了,比较的是内容而不再是地址是否相等
+
+  System.out.println("优秀");
+else if(grade.equals("B"))
+  System.out.println("良好");
+else if(grade.equals("C")
+ System.out.println("及格");
+else if(grade.equals("D")
+ System.out.println("不及格");
+else 
+ System.out.println("未知等级");
+  }
+}
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
